@@ -316,6 +316,23 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        4,
+        4,
+        4,
+        4,
+        4,
+        null,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/fijimunkii/Projects/kinder/app/controllers/welcome_controller.rb": [
@@ -336,6 +353,6 @@
         null
       ]
     },
-    "timestamp": 1386363104
+    "timestamp": 1386365286
   }
 }

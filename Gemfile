@@ -7,6 +7,9 @@ gem 'rails', '3.2.14'
 
 gem 'pg'
 
+gem 'omniauth-facebook', '1.4.0' #https://github.com/mkdynamic/omniauth-facebook
+# downgraded to 1.4.0 because of this issue -- http://stackoverflow.com/a/11620929/2474735
+
 
 # Gems used only for assets and not required
 # in production environments by default.
