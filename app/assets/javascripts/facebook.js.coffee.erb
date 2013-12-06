@@ -21,7 +21,7 @@ jQuery ->
       e.preventDefault()
       FB.login ((response) ->
         <%# requesting scope http://stackoverflow.com/a/12663627/2474735 %>
-        window.location = '/auth/facebook/callback' if response.authResponse), scope: "email, user_birthday, user_likes"
+        window.location = '/auth/facebook/callback' + '?' + $.param({ signed_request: response.authResponse.signedRequest }) if response.authResponse), scope: "email, user_birthday, user_likes"
 
     $('#sign_out').click (e) ->
       FB.getLoginStatus (response) ->

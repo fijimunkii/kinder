@@ -26,10 +26,13 @@ ActiveRecord::Schema.define(:version => 20131206203006) do
   create_table "users", :force => true do |t|
     t.string   "fb_id"
     t.string   "oauth_token"
+    t.string   "provider"
     t.datetime "oauth_expires_at"
     t.string   "email"
-    t.text     "bio"
+    t.string   "name"
     t.string   "img_url"
+    t.string   "birthday"
+    t.text     "bio"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end

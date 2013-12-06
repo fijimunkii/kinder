@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :fb_id
       t.string :oauth_token
+      t.string :provider
       t.datetime :oauth_expires_at
       t.string :email
       t.string :name

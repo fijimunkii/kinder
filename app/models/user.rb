@@ -4,12 +4,16 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
     User.where(fb_id: auth.uid).first_or_initialize.tap do |user|
-    user.fb_id = auth.uid
-    user.email = auth.info.email
-    user.img_url = auth.info.image
-    user.oauth_token = auth.credentials.token
-    user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-    user.save!
+      user.provider = auth.provider
+      user.fb_id = auth.uid
+      user.name = auth.info.name
+      user.email = auth.info.email
+      user.birthday = auth.extra.raw_info.birthday if auth.extra.raw_info.birthday
+      user.img_url = auth.info.image
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
   end
 
   def like(related_user_id)
@@ -30,5 +34,4 @@ class User < ActiveRecord::Base
 
     return test
   end
-
 end
