@@ -2,6 +2,15 @@ class User < ActiveRecord::Base
   has_many :likes
   attr_accessible :bio, :email, :fb_id, :img_url, :oauth_expires_at, :oauth_token
 
+  def self.from_omniauth(auth)
+    User.where(fb_id: auth.uid).first_or_initialize.tap do |user|
+    user.fb_id = auth.uid
+    user.email = auth.info.email
+    user.img_url = auth.info.image
+    user.oauth_token = auth.credentials.token
+    user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+    user.save!
+  end
 
   def like(related_user_id)
     Like.create(user_id: self.id, related_user_id: related_user_id)
