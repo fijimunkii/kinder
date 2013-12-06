@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Fb:
+  = @user.fb_id
+%p
+  %b Oauth token:
+  = @user.oauth_token
+%p
+  %b Oauth expires at:
+  = @user.oauth_expires_at
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Bio:
+  = @user.bio
+%p
+  %b Img url:
+  = @user.img_url
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
