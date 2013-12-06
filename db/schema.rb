@@ -11,14 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206200901) do
+ActiveRecord::Schema.define(:version => 20131206203006) do
 
   create_table "likes", :force => true do |t|
     t.integer  "user_id"
     t.integer  "related_user_id"
+    t.boolean  "is_match"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  add_index "likes", ["user_id"], :name => "index_likes_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "fb_id"
