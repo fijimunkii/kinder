@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20131206200901) do
 
-  create_table "cats", :force => true do |t|
-    t.string   "img_url"
-    t.integer  "num_hot",    :default => 0
-    t.integer  "num_not",    :default => 0
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-  end
-
   create_table "likes", :force => true do |t|
     t.integer  "user_id"
     t.integer  "related_user_id"
