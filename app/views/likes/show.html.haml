@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @like.user_id
+%p
+  %b Related user:
+  = @like.related_user_id
+%p
+  %b Is match:
+  = @like.is_match
+
+= link_to 'Edit', edit_user_like_path(@like.user, @like)
+\|
+= link_to 'Back', user_likes_path(@like.user)
