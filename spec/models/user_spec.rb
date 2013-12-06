@@ -23,11 +23,21 @@ describe User do
       @user.like(@related_user.id)
     end
     it "returns false if the match does not exist" do
-      @user.is_match?(@related_user.id)
+      expect(@user.is_match?(@related_user.id)).to be_false
     end
     it "returns true if the match exists" do
       @related_user.like(@user.id)
-      @user.is_match?(@related_user.id)
+      expect(@user.is_match?(@related_user.id)).to be_true
+    end
+    it "updates the is_match column for the user if the match exists" do
+      @related_user.like(@user.id)
+      like = Like.where(user_id: @user.id, related_user_id: @related_user.id)
+      expect(like[0].is_match).to be_true
+    end
+    it "updates the is_match column for the related user if the match exists" do
+      @related_user.like(@user.id)
+      like = Like.where(user_id: @related_user.id, related_user_id: @user.id)
+      expect(like[0].is_match).to be_true
     end
   end
 

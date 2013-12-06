@@ -9,13 +9,17 @@ class User < ActiveRecord::Base
   end
 
   def is_match?(related_user_id)
-    test_1 = Like.where(user_id: self.id, related_user_id: related_user_id)
-    test_2 = Like.where(user_id: related_user_id, related_user_id: self.id)
-    if test_1 && test_2
-      binding.pry
-      test_2[0].update_attributes(is_match: true)
+    test_match = Like.where(user_id: related_user_id, related_user_id: self.id)
+    orig_match = Like.where(user_id: self.id, related_user_id: related_user_id)
+
+    test = test_match.length == 1
+
+    if test
+      test_match[0].update_attributes(is_match: true)
+      orig_match[0].update_attributes(is_match: true)
     end
-    return test_1 && test_2
+
+    return test
   end
 
 end
