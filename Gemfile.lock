@@ -272,6 +272,7 @@ DEPENDENCIES
   launchy
   meta_request
   nested_scaffold
+  omniauth
   omniauth-facebook (= 1.4.0)
   pg
   pry-debugger

@@ -1,3 +1,12 @@
-%a#sign_in.btn.btn-sm.btn-social-facebook{href:"/auth/facebook"}
-  %i.fui-facebook
-  Connect with Facebook
+- if current_user
+  Signed in as
+  %strong
+    = current_user.name
+  !
+  = link_to "Sign out", signout_path, id: "sign_out"
+
+- else
+
+  %a#sign_in.btn.btn-sm.btn-social-facebook{href:"/auth/facebook"}
+    %i.fui-facebook
+    Connect with Facebook
