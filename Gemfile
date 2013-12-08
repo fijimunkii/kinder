@@ -38,7 +38,11 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "listen", '2.4.0', :group => [:test, :development]
+
 gem 'nested_scaffold', :group => [:test, :development]
+
 gem "rspec-rails", :group => [:test, :development]
 gem "guard-rspec", :group => [:test, :development]
 gem "capybara", :group => [:test, :development]
