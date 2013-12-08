@@ -37,10 +37,6 @@ class LikesController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @like = @user.likes.find(params[:id])
-    if @like.destroy
-      render :json => { success: true }
-    else
-      render :json => @like.errors
-    end
+    render :json => { success: true }
   end
 end
