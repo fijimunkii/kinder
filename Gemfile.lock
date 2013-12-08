@@ -47,6 +47,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     celluloid (0.15.2)
       timers (~> 1.1.0)
     childprocess (0.3.9)
@@ -62,6 +65,7 @@ GEM
     coffee-script-source (1.6.3)
     columnize (0.3.6)
     daemons (1.1.9)
+    database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger (1.6.3)
       columnize (>= 0.3.1)
@@ -264,7 +268,9 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   capybara
+  capybara-webkit
   coffee-rails (~> 3.2.1)
+  database_cleaner
   guard-rspec
   haml-rails
   jasmine
