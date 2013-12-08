@@ -12,3 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require json2
+//= require handlebars-latest
+//= require underscore
+//= require backbone
+//= require app
