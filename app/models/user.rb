@@ -1,6 +1,25 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id               :integer          not null, primary key
+#  fb_id            :string(255)
+#  oauth_token      :string(255)
+#  provider         :string(255)
+#  oauth_expires_at :datetime
+#  email            :string(255)
+#  name             :string(255)
+#  img_url          :string(255)
+#  birthday         :string(255)
+#  location         :string(255)
+#  bio              :text
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 class User < ActiveRecord::Base
   has_many :likes
-  attr_accessible :bio, :email, :fb_id, :img_url, :oauth_expires_at, :oauth_token
+  attr_accessible :bio, :name, :email, :fb_id, :provider, :location, :birthday, :img_url, :oauth_expires_at, :oauth_token
 
   def self.from_omniauth(auth)
     User.where(fb_id: auth.uid).first_or_initialize.tap do |user|

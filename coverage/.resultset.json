@@ -248,6 +248,28 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/fijimunkii/Projects/kinder/db/migrate/20131206200808_create_users.rb": [
@@ -263,7 +285,7 @@
         1,
         1,
         1,
-        null,
+        1,
         null,
         1,
         null,
@@ -285,6 +307,6 @@
         null
       ]
     },
-    "timestamp": 1386369002
+    "timestamp": 1386513756
   }
 }

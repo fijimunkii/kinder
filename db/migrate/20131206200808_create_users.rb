@@ -9,8 +9,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :img_url
       t.string :birthday
+      t.string :location
       t.text :bio
-
 
       t.timestamps
     end

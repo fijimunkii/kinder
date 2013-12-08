@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20131206203006) do
     t.string   "name"
     t.string   "img_url"
     t.string   "birthday"
+    t.string   "location"
     t.text     "bio"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
